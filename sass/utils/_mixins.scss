@@ -1,0 +1,29 @@
+@mixin auto() {
+    width: 90%;
+    margin: auto;
+}
+
+@mixin card() {
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px $colour-shadow;
+    margin-top: 20px;   
+    overflow: hidden; 
+    object-fit: cover;
+}
+
+@mixin display-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-space-between-vertical-center() {    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

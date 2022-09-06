@@ -1,0 +1,25 @@
+.button-homepage {
+    background: linear-gradient(to bottom right, $colour-secondary, $colour-primary);
+    color: #FFF;
+    font-size: 16px;
+    padding: 20px 25px;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    &:hover {
+    background: linear-gradient(to bottom right, $colour-primary, $colour-secondary);        
+    }
+}
+
+.button-menu-page {
+    background: linear-gradient(to bottom right, $colour-secondary, $colour-primary);
+    color: #FFF;
+    font-size: 16px;
+    padding: 15px 50px;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    &:hover {
+    background: linear-gradient(to bottom right, $colour-primary, $colour-secondary);        
+    }
+}

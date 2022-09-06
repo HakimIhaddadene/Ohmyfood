@@ -1,0 +1,121 @@
+#top-page {
+    padding: 20px 0 50px 0;
+    background-color: $background;
+}
+
+#presentation {
+    @include auto();
+    font-family: $font-family;
+    text-align: center;
+    p {
+        color: $colour-text-secondary;
+        font-size: 18px;
+    }
+}
+
+#functioning{
+    @include auto();
+    @include display-column();
+    margin-top: 30px;
+    .functioning-element {
+        display: flex;
+        height: 75px;
+        margin-top: 20px;
+        margin-left: -13px;
+    }
+    .function-element__num {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            background-color: $colour-primary;
+            margin: 23px 0;
+            position: relative;
+            left: 13px;
+            p {
+                color: #FFF;
+                font-size: 15px;
+            }
+        }
+        .function-element__details {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 30px;
+            box-shadow: 2px 2px 10px $colour-shadow;
+            background-color: $background;
+        }
+        .function-element__details--icon {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 13px;
+        }
+        .function-element__details--txt {
+            width: 80%;
+            align-items: center;
+            p {
+                font-weight: 600;
+            }
+        }
+}
+
+#restaurants {
+    background-color: $background;
+    margin-top: 50px;
+    padding: 30px 0 50px 0;
+    #restaurant-body{
+        @include auto();
+    }
+}
+
+.card {
+    @include display-column() ;
+    @include card() ;
+    .card__img {
+        width: 100%;
+	    height: 175px;
+        overflow: hidden;
+        object-fit: cover;
+        position: relative;
+        .card__img--new {
+            position: absolute;
+            background-color: #99E2D0;
+            top: 15px;
+            right: 10px;
+            border-radius: 3px;
+            padding: 8px 15px;
+            font-weight: 600;
+            p {
+                font-size: 14px;
+                color: #008766;
+                margin: 0;
+            }
+        }
+    }
+    .card__details {
+        @include auto();
+        @include flex-space-between-vertical-center();
+        .card__details--name{
+            margin-top: 10px;
+            h3 {
+                margin: 0;
+                padding-top: 10px; 
+            }
+            p {
+                margin: 0;
+                padding: 5px 0 15px 0; 
+            }
+        }
+        .card__details--like{
+            align-items: center;
+        }
+    }
+    &:hover {
+        box-shadow: 2px 2px 20px $dark-colour-shadow;
+    }
+}

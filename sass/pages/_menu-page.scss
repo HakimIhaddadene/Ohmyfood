@@ -1,0 +1,65 @@
+#page {
+    @include display-column();
+    .details {
+        border-radius: 40px 40px 0 0;
+        padding: 20px 0;
+        background-color: $background;
+        margin-top: -50px;
+        .details__body {
+            @include auto();
+            @include display-column();
+            .details__body--title {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }    
+            .details__body--category-title {
+                margin-top: 20px;
+                h2 {
+                    color: $colour-text-secondary;
+                    font-weight: 100;
+                }
+            }    
+            .details__body--category-element {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                background-color: #FFF;
+                border-radius: 15px;
+                box-shadow: 2px 2px 10px #969696;
+                padding: 0 10px;
+                margin-bottom: 20px;
+                &:hover {
+                    box-shadow: 2px 2px 20px $dark-colour-shadow;
+                }
+                .details__body--category-element-name {
+                    h3 {
+                        margin: 0;
+                        padding-top: 15px; 
+                    }
+                    p {
+                        color: $colour-text-secondary;
+                        margin: 0;
+                        padding: 5px 0 15px 0; 
+                    }
+                }
+                .details__body--category-element-price {
+                    align-items: flex-end;
+                    p {
+                        color: $colour-text-secondary;
+                        font-weight: bold;
+                    }
+                }
+            }       
+            h1 {
+                font-family: $font-family-logo-and-titles;
+                font-weight: 100;
+            }
+        }
+    }
+    .order {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 60px 0;
+    }
+}
