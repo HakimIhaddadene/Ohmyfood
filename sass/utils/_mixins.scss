@@ -6,9 +6,8 @@
 @mixin card() {
     border-radius: 15px;
     box-shadow: 2px 2px 2px $colour-shadow;
-    margin-top: 20px;   
+    margin: 10px 0 10px 0;  
     overflow: hidden; 
-    object-fit: cover;
 }
 
 @mixin display-column() {
@@ -26,4 +25,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+
+
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
 }
