@@ -306,6 +306,7 @@ footer #footer-element a:hover {
 }
 .card .card__details .card__details--like {
   align-items: center;
+  cursor: pointer;
 }
 .card:hover {
   box-shadow: 2px 2px 20px #9b9b9b;
@@ -482,6 +483,14 @@ footer #footer-element a:hover {
   background: linear-gradient(to bottom right, #9356DC, #FF79DA);
 }
 
+@keyframes heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   font-family: Roboto, sans-serif;
 }
