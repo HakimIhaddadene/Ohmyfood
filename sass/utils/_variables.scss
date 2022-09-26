@@ -15,8 +15,8 @@ $dark-colour-shadow: darken($colour-shadow, 10%);
 $background : #F6F6F6;
 $footer-background: #353535;
 
-
-
+$anim-dur-loader: 1200ms;
+$anim-delay-loader: calc($anim-dur-loader / 8);
 
 
 $breakpoints: (

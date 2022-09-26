@@ -6,8 +6,11 @@
     border: 0;
     border-radius: 30px;
     margin-top: 10px;
+    box-shadow: 2px 2px 10px $colour-shadow;
+    cursor: pointer;
     &:hover {
-    background: linear-gradient(to bottom right, $colour-primary, $colour-secondary);        
+        opacity: 0.8;         
+        box-shadow: 2px 2px 20px $dark-colour-shadow;
     }
 }
 
@@ -19,7 +22,10 @@
     border: 0;
     border-radius: 30px;
     margin-top: 10px;
+    box-shadow: 2px 2px 10px $colour-shadow;
+    cursor: pointer;
     &:hover {
-    background: linear-gradient(to bottom right, $colour-primary, $colour-secondary);        
+        opacity: 0.8; 
+        box-shadow: 2px 2px 20px $dark-colour-shadow;      
     }
 }

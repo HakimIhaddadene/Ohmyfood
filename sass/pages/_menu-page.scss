@@ -1,5 +1,9 @@
 #page {
     @include display-column(); 
+    img {
+        height: 250px;
+        object-fit: cover;
+    }
     @include tablet-only {
         img {
             height: 400px;
@@ -38,6 +42,12 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        @include tablet-only {
+            margin-right: 100px;
+        } 
+        @include desktop-only {
+            margin-right: 150px;
+        } 
     }
     .details-body-title__icon {
         color: $colour-text-secondary;
@@ -59,6 +69,42 @@
         flex-direction: row;
         justify-content: space-between;
     }    
+    .details-body-category__list-starters {
+        @include display-column();
+        animation: gradual 1.5s ease-in-out;
+        @include tablet-only {
+            width: 45%;
+            margin-right: 5%;
+        }    
+        @include desktop-only {
+            width: 30%;
+            margin-right: 0;
+        }  
+    }   
+    .details-body-category__list-dishes {
+        @include display-column();
+        animation: gradual 3s ease-in-out;
+        @include tablet-only {
+            width: 45%;
+            margin-right: 5%;
+        }    
+        @include desktop-only {
+            width: 30%;
+            margin-right: 0;
+        }  
+    }   
+    .details-body-category__list-desserts {
+        @include display-column();
+        animation: gradual 4.5s ease-in-out;
+        @include tablet-only {
+            width: 45%;
+            margin-right: 5%;
+        }    
+        @include desktop-only {
+            width: 30%;
+            margin-right: 0;
+        }  
+    }  
     .details-body-category__list {
         @include display-column();
         @include tablet-only {
@@ -68,7 +114,7 @@
         @include desktop-only {
             width: 30%;
             margin-right: 0;
-        }    
+        }  
     }  
     .details-body-category__title {
         margin-top: 5px;
@@ -90,12 +136,27 @@
     .details-body-category__element {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: flex-end; 
         background-color: #FFF;
         border-radius: 15px;
         box-shadow: 2px 2px 10px #969696;
         padding: 0 10px;
         margin-bottom: 20px;
+        cursor: pointer;
+        overflow: hidden;         
+        position: relative;
+        transition: padding-right 500ms ease-in-out;           
+        &:hover {
+            padding-right: 65px;
+        }
+        &:hover .selection-dish {
+            opacity: 1;
+            transform: translate(-50px);
+        }
+        &:hover .fa-circle-check {
+            transform: rotate(360deg) ;
+        }
+
         @include tablet-only {
             margin: 10px 0 20px 0;
         }    
@@ -103,12 +164,17 @@
             box-shadow: 2px 2px 20px $dark-colour-shadow;
         }
         .details-body-category__element--name {
+            min-width: 0;
+            h3, p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             h3 {
                 margin: 0;
                 padding-top: 15px; 
             }
-            p {
-                font-size: 15px;
+            p {               
                 color: $colour-text-secondary;
                 margin: 0;
                 padding: 5px 0 15px 0; 
@@ -117,10 +183,62 @@
         .details-body-category__element--price {
             align-items: flex-end;
             p {
-                font-size: 15px;
                 color: $colour-text-secondary;
                 font-weight: bold;
             }
         }    
+    }
+}
+
+
+
+.selection-dish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $colour-tertiary;
+    width: 50px;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    right: -50px;
+    top: 0;
+    opacity: 0;
+    transition: transform 500ms ease-in-out;                
+    & .fa-circle-check {
+        color: #fff;
+        transition: transform 500ms ease-in-out;           
+  }
+}
+
+
+
+.heart {
+    position: relative;
+    
+    & i {
+        font-size: 30px;
+        color: #7E7E7E;
+        border-width: 1px;
+    }
+    
+    & .fas {
+        position: absolute;
+        opacity: 0;
+        background: linear-gradient(to bottom left, $colour-primary, $colour-secondary);
+        background-clip: text;                  
+        -webkit-background-clip: text;          
+        color:transparent;  
+    }
+    
+    &:hover .fas {
+        transition: all 300ms ease-in;
+        opacity: 1;
+    }
+    
+    &:hover .far {
+        transition: all 150ms ease-in;          
+        opacity: 0;
+        cursor: pointer;
     }
 }

@@ -1,3 +1,48 @@
+#loader-index {
+    @include display-column();
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, $colour-secondary, $colour-primary);    
+    position: fixed;
+    left: 0;
+    top: 0;
+    animation: loader 0s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    z-index: 9999;
+}
+
+#spin-loader-index {
+    border: 5px solid $colour-tertiary;
+    border-radius: 50%;
+    border-top: 5px solid #FFF;
+    width: 60px;
+    height: 60px;
+    margin-top: 50px;
+    animation: rotate 2s linear infinite;
+}
+
+.load {
+    display: flex;
+    justify-content: center;
+    &__element {
+        animation: loader $anim-dur-loader backwards infinite ease-in-out alternate;
+        margin-right: 3px;
+        @for $i from 1 through 8 {
+            &--#{$i} {
+                animation-delay: $anim-delay-loader * $i;
+            }
+        }
+    }
+    p {
+        font-family: $font-family-logo-and-titles;
+        font-size: 50px;
+        color: #FFF;
+    }
+}
+
 #top-page {
     padding: 20px 0 60px 0;
     background-color: $background;
@@ -18,7 +63,10 @@
     @include display-column();
     margin-top: 30px;
     .functioning__title {
-        width: 100%;
+        width: 100%;   
+        @include desktop-only {
+            text-align: center;
+        } 
     }
     .functioning__body {
         display: flex;
@@ -26,6 +74,9 @@
         @include tablet-only {
             flex-direction: row;
             flex-wrap: wrap;
+        }    
+        @include desktop-only {
+            justify-content: center;
         }    
     }
 }
@@ -152,10 +203,6 @@
                 margin: 0;
                 padding: 5px 0 15px 0; 
             }
-        }
-        .card__details--like{
-            align-items: center;
-            cursor: pointer;
         }
     }
     &:hover {

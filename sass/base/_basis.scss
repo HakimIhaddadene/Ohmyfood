@@ -1,43 +1,39 @@
-@font-face {
-    font-family: "Shrikhand";
-    src: url("/public/css/fonts/Shrikhand-Regular.ttf") format("ttf");
-   }
-  
-  p {
-      font-size: 16px;
-      color: $colour-text;
-      font-family: $font-family;
-  }
-  
-  a {
-    text-decoration: none;
-    color: $colour-text-secondary;
-  }
-  
-  h1, h2, h3 {
-    color: $colour-title-primary;
-  }
-  
-  h2 {
-    font-size: 17px;
-  }  
-  
-  h3 {
-    font-size: 17px;
-  }
-  
-  * {
-      box-sizing: border-box;
-  }
-  
-  .font-awesome-light-gray {
-    color: #7E7E7E;
-  }
-  
-  .font-awesome-dark-gray {
-    color: #353535;
-  }
-  
-  .font-awesome-purple {
-    color: #9356DC;
-  }
+p {
+    font-size: 16px;
+    color: $colour-text;
+    font-family: $font-family;
+}
+
+a {
+  text-decoration: none;
+  color: $colour-text-secondary;
+}
+
+h1, h2, h3 {
+  color: $colour-title-primary;
+}
+
+h2 {
+  font-size: 17px;
+}  
+
+h3 {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.font-awesome-light-gray {
+  color: #7E7E7E;
+}
+
+.font-awesome-dark-gray {
+  color: #353535;
+}
+
+.font-awesome-purple {
+  color: #9356DC;
+}
